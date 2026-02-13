@@ -5,13 +5,6 @@ import connectDb from './configs/mongodb.js'
 import { clerkWebhooks } from './controllers/webhooks.js'
 import educatorRouter from './routes/educatorRoutes.js'
 import { clerkMiddleware } from '@clerk/express'
-import connectCloudinary from './configs/cloudinary.js'
-import productRoutes from "./routes/productRoutes.js";
-import orderRoutes from "./routes/orderRoutes.js";
-import adminRoutes from "./routes/adminRoutes.js";
-
-
-
 
 
 const app = express()
@@ -26,11 +19,6 @@ app.use(clerkMiddleware())
 app.get('/', (req, res) => res.send("API WORKING"))
 app.post('/clerk', express.json(), clerkWebhooks)
 app.use('/api/educator', express.json(), educatorRouter)
-
-
-app.use("/api/products", express.json(), productRoutes);
-app.use("/api/orders", express.json(), orderRoutes);
-app.use("/api/admin", express.json(), adminRoutes);
 
 
 const PORT = process.env.PORT || 5000

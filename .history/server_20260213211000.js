@@ -30,7 +30,6 @@ app.use('/api/educator', express.json(), educatorRouter)
 
 app.use("/api/products", express.json(), productRoutes);
 app.use("/api/orders", express.json(), orderRoutes);
-app.use("/api/admin", express.json(), adminRoutes);
 
 
 const PORT = process.env.PORT || 5000
