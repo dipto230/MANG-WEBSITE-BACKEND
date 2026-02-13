@@ -2,9 +2,6 @@ import express from "express"
 import { addCourse, getEducatorCourses, updateRoleToEducator } from "../controllers/educatorController.js"
 
 import upload from "../configs/multer.js";
-import { protectEducator } from './../middlewares/authMiddleware';
-
-
 
 
 
